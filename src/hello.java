@@ -2,26 +2,21 @@ import  java.util.Scanner;
 public class hello {
 
     public static void main(String[] args) {
-        int [] arr = new int[5];
-        System.out.println("Enter five numbers u wanna add : ");
         Scanner scan = new Scanner(System.in);
-        for(int i = 0 ; i <5;i++){
-            arr[i] = scan.nextInt();
-        }
-        int sum = 0;
-        for ( int j : arr){
-            sum += j ;
-        }
-        System.out.println("Sum of the array = " + sum);
 
-        int max = arr[0];
+        int num = 1234542;
+        int reversed = 0;
 
-        for ( int k : arr){
-            if( k > max){
-                max = k;
-            }
+        while (num != 0 ){
+            int digit = num % 10 ;
+            reversed = reversed * 10 + digit;
+            num = num /10;
         }
-        System.out.println("Largest number in the array is " + max);
+        System.out.println( reversed);
+
+
+
+
 
         scan.close();
     }
