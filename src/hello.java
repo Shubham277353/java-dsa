@@ -1,9 +1,13 @@
-import java.util.Scanner;
-
 public class hello {
+
     public static void main(String[] args) {
-        for(int i = 0;i<=100;i++){
-            System.out.println(i);
-        }
+        int result = sum(10,20,20);
+        System.out.println(result);
+    }
+    public static int sum(int a , int b){
+        return  a + b;
+    }
+    public static int sum(int a , int b , int c){
+        return  a + b + c;
     }
 }
