@@ -1,30 +1,27 @@
     public class ArmstrongNumber {
         public static void main(String[] args) {
-            int armNum = 1513;
+            int armNum = 153;
             int temp = armNum;
-            int newNum = 0 ;
+            int newNum = armNum ;
             int digitsCounter = 0;
             int sum = 0;
 
             while(armNum != 0){
-                int num = armNum % 10;
-                newNum = (newNum + num) * 10;
-                armNum = armNum/10;
+                armNum = armNum /10;
                 digitsCounter++;
             }
-            System.out.println(newNum);
 
-            // newNum = 3510;
-            while(newNum != 0){
-                int num = newNum %10;
+            while(temp != 0){
+                int num = temp %10;
                 sum = sum + (int) Math.pow(num ,digitsCounter);
-                newNum = newNum / 10 ;
+                temp = temp / 10 ;
             }
             System.out.println(sum);
-            if(sum == temp){
+            if(sum == newNum){
                 System.out.println("Its an armstrong number.");
             }else{
-                System.out.println("It's not an armstrong Number.");
+                System.out.println("Its not an armstrong number.");
+
             }
         }
     }
