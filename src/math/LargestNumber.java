@@ -1,3 +1,5 @@
+package math;
+
 import java.util.Scanner;
 
 public class LargestNumber {
@@ -8,8 +10,8 @@ public class LargestNumber {
         Scanner sc = new Scanner(System.in);
         i = sc.nextInt();
         int largestNum = i;
-        while (i != 0){
-            if(largestNum < i ){
+        while (i != 0) {
+            if (largestNum < i) {
                 largestNum = i;
             }
             i = sc.nextInt();

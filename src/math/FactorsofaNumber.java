@@ -1,3 +1,5 @@
+package math;
+
 public class FactorsofaNumber {
     public static void main(String[] args) {
         int n = 36;

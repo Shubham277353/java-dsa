@@ -1,3 +1,5 @@
+package string;
+
 import java.util.Scanner;
 
 public class Palindrome {
@@ -10,17 +12,16 @@ public class Palindrome {
         str = sc.nextLine();
         String newStr = str.toLowerCase();
 
-        for(int i = (newStr.length())-1; i >= 0; i--){
+        for (int i = (newStr.length()) - 1; i >= 0; i--) {
             char c = newStr.charAt(i);
             revStr.append(c);
         }
 
         String result = revStr.toString();
 
-        if(newStr.equals(result)){
+        if (newStr.equals(result)) {
             System.out.println("String " + str + " is a palindrome.");
-        }
-        else{
+        } else {
             System.out.println("String " + str + " is not a palindrome.");
         }
     }

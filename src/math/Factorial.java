@@ -1,3 +1,5 @@
+package math;
+
 public class Factorial {
     public static void main(String[] args) {
         // task : to find factorial of a given number
@@ -6,10 +8,10 @@ public class Factorial {
         int n = 20;
         long product = 1;
 
-        for(int i = n ; i > 0 ; i--){
-             product *= i ;
+        for (int i = n; i > 0; i--) {
+            product *= i;
         }
-        System.out.println("Factorial of " + n + " is " + product);
+        System.out.println("Fact of " + n + " is " + product);
     }
 
 }
