@@ -1,27 +1,31 @@
 package Practice;
 
-import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Practice {
-    public static int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int[] arr = new int[2];
+    public static Character nonRepeating(String str) {
+        Map<Character, Integer> map = new HashMap<>();
+        char ch = 0;
 
-        for (int i = 0; i < nums.length; i++) {
-            int val = target - nums[i];
-            if (map.containsKey(val)) {
-                return new int[]{map.get(val), i};
-            }
-            map.put(nums[i], i);
+        String str1 = str.toLowerCase();
+
+        for (char c : str1.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
         }
-
-        return null;
+        for (char c : str1.toCharArray()) {
+            if (map.get(c) == 1) {
+                ch = c;
+                break;
+            }
+        }
+        System.out.println(map);
+        return ch;
     }
 
 
     public static void main(String[] args) {
-        int[] nums = {3, 3};
-        System.out.println(Arrays.toString(twoSum(nums, 6)));
+        String str = "Hello my name is Shubham";
+        System.out.println(nonRepeating(str));
     }
 }

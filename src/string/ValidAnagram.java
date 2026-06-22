@@ -1,31 +1,38 @@
 package string;
 
-import java.util.HashMap;
+import java.util.*;
 
 public class ValidAnagram {
     public static boolean isAnagram(String s, String t) {
-        HashMap<Character, Integer> map = new HashMap<>();
-        if (s.length() != t.length()) return false;
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            int num = map.getOrDefault(c, 0);
-            map.put(c, (num + 1));
+//        Set<Character> set = new HashSet<>();
+//
+//        for (char c : s.toCharArray()) {
+//            set.add(c);
+//        }
+//        for (char c : t.toCharArray()) {
+//            if (!set.contains(c)) {
+//                return false;
+//            }
+//        }
+//
+//        return true;
+
+        Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> map2 = new HashMap<>();
+
+        for (char c : s.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
         }
-        for (int j = 0; j < t.length(); j++) {
-            char c2 = t.charAt(j);
-            int num2 = map.getOrDefault(c2, 0);
-            if (map.containsKey(c2)) {
-                map.put(c2, num2 - 1);
-            }
-            if (map.getOrDefault(c2, 0) == 0) {
-                map.remove(c2);
-            }
-        }
-        if (map.isEmpty()) {
-            return true;
+        for (char c : t.toCharArray()) {
+            map2.put(c, map2.getOrDefault(c, 0) + 1);
         }
 
-        return false;
+        for (char c : s.toCharArray()) {
+            if (!Objects.equals(map.get(c), map2.get(c))) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static void main(String[] args) {

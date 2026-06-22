@@ -3,21 +3,22 @@
 package array;
 
 import java.util.HashSet;
+import java.util.Set;
 
 class ContainsDuplicate {
     public static boolean containsDuplicate(int[] nums) {
-        HashSet<Integer> set = new HashSet<>();
-        for (int i = 0; i < nums.length; i++) {
-            if (set.contains(nums[i])) {
+        Set<Integer> set = new HashSet<>();
+
+        for (int num : nums) {
+            if (!set.add(num)) {
                 return true;
             }
-            set.add(nums[i]);
         }
         return false;
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 4, 56, 3};
+        int[] arr = {1, 2, 4, 56, 1};
         System.out.println(containsDuplicate(arr));
     }
 }
